@@ -9,6 +9,7 @@ import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
+import org.eclipse.paho.client.mqttv3.MqttTopic;
 
 public class PahoDemo {
 
@@ -17,8 +18,8 @@ public class PahoDemo {
   public PahoDemo() {}
 
   public static void main(String[] args) {
-    // new PahoDemo().publish1();
-    // new PahoDemo().publish2();
+      new PahoDemo().publish1();
+     //new PahoDemo().publish2();
     try {
 		new PahoDemo().publish3();
 	} catch (IOException e) {
@@ -32,8 +33,8 @@ public class PahoDemo {
       client = new MqttClient("tcp://localhost:1883", "pahomqttpublish1");
       client.connect();
       MqttMessage message = new MqttMessage();
-      message.setPayload("27".getBytes());
-      client.publish("home/outsidetemperature", message);
+      message.setPayload("31".getBytes());
+      client.publish("/home/outsidetemperature", message);
       client.disconnect();
     } catch (MqttException e) {
       e.printStackTrace();
@@ -50,17 +51,17 @@ public class PahoDemo {
 	      client.connect(options);
 	      
 	      MqttMessage message = new MqttMessage();
-	      message.setPayload("30".getBytes());
+	      message.setPayload("29".getBytes());
 	      
-	      message.setRetained(true); // try with true
+	      message.setRetained(false); // try with true
 	      message.setQos(0);
 
-	      client.publish("home/outsidetemperature", message);
+	      //client.publish("home/outsidetemperature", message);
 	      // Or
-	      //MqttTopic topic = client.getTopic("home/outsidetemperature");
-	      //topic.publish(message);
+	      MqttTopic topic = client.getTopic("home/outsidetemperature");
+	      topic.publish(message);
 	      
-	      //client.disconnect(); //Try to comment it, execute and stop the execution
+	     // client.disconnect(); //Try to comment it, execute and stop the execution
 	    } catch (MqttException e) {
 	      e.printStackTrace();
 	    }
