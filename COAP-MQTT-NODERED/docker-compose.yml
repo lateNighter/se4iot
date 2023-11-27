@@ -47,6 +47,8 @@ services:
     image: custom_nodered:latest
     environment:
       - TZ=Europe/Amsterdam
+      - MYSQLUSERNAME=root
+      - MYSQLPASSWORD=example
     ports:
       - "1880:1880"
     networks:
