@@ -26,9 +26,25 @@ services:
 #    networks:
 #      - se4iot-net
 
+#node-red:
+#    image: nodered/node-red:latest
+ #   container_name: se4iot-node-red
+ #   environment:
+ #     - TZ=Europe/Amsterdam
+ #   ports:
+ #     - "1880:1880"
+ #   networks:
+ #     se4iot-network:
+ #       ipv4_address: 172.30.0.100
+ #   volumes:
+ #     - ./nodered/data:/data
+
   node-red:
-    image: nodered/node-red:latest
     container_name: se4iot-node-red
+    build:
+      context: ./nodered-custom/
+      dockerfile: Dockerfile
+    image: custom_nodered:latest
     environment:
       - TZ=Europe/Amsterdam
     ports:
@@ -37,7 +53,7 @@ services:
       se4iot-network:
         ipv4_address: 172.30.0.100
     volumes:
-      - ./nodered/data:/data
+      - ./nodered-custom/data:/data
 
   mosquitto:
     container_name: se4iot-mosquitto
