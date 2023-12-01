@@ -8,6 +8,13 @@
         "env": []
     },
     {
+        "id": "9bfc2b6b.d09d68",
+        "type": "tab",
+        "label": "influxdb",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "a928ba0.2d1f748",
         "type": "mqtt-broker",
         "name": "",
@@ -168,6 +175,224 @@
         "name": "Hello CoAP Server",
         "port": "5683",
         "ipv6": false
+    },
+    {
+        "id": "e38ada7c23eea3a7",
+        "type": "global-config",
+        "name": "global-config",
+        "env": []
+    },
+    {
+        "id": "65f5f7c7.2e135",
+        "type": "mqtt-broker",
+        "name": "MyBroker",
+        "broker": "vps.diruscio.org",
+        "port": "3004",
+        "clientid": "/#",
+        "autoConnect": true,
+        "usetls": false,
+        "compatmode": false,
+        "protocolVersion": 4,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "caebf959.f8cb8",
+        "type": "ui_tab",
+        "name": "Temperature",
+        "icon": "fa-thermometer-empty",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "181468e4.de28b7",
+        "type": "ui_tab",
+        "name": "Allarme",
+        "icon": "fa-shield",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "76e7315.6625f5",
+        "type": "ui_group",
+        "name": "Temperature",
+        "tab": "caebf959.f8cb8",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "15aeb36c.906bdd",
+        "type": "ui_group",
+        "name": "Allarme",
+        "tab": "181468e4.de28b7",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "194d5021.25ef1",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "order": 4,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "24f8c1.9605d74",
+        "type": "ui_group",
+        "name": "Live temperatures",
+        "tab": "194d5021.25ef1",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "b8e42db6.e8a4",
+        "type": "mqtt-broker",
+        "name": "LocalBroker",
+        "broker": "95.110.171.28",
+        "port": "1883",
+        "clientid": "streetscience",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "de1b7a67.fbcd58",
+        "type": "ui_tab",
+        "name": "Giardino",
+        "icon": "fa-tint",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "58bf1d0.2d285e4",
+        "type": "ui_group",
+        "name": "Irrigazione",
+        "tab": "de1b7a67.fbcd58",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "4e53f268.aaddbc",
+        "type": "ui_group",
+        "name": "LUCI",
+        "tab": "95d17d8a.8e1d8",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "95d17d8a.8e1d8",
+        "type": "ui_tab",
+        "name": "StreetScience",
+        "icon": "fa-bed",
+        "order": 5,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "bca5bfed.6fcc5",
+        "type": "ui_group",
+        "name": "StreetScience",
+        "tab": "95d17d8a.8e1d8",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "212c1de1.ea67e2",
+        "type": "ui_spacer",
+        "d": true,
+        "name": "spacer",
+        "group": "4e53f268.aaddbc",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "8e11387e.560328",
+        "type": "ui_group",
+        "name": "Sensori temperatura",
+        "tab": "95d17d8a.8e1d8",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "5ca9149d.f7a16c",
+        "type": "ui_group",
+        "name": "Sensori umidità",
+        "tab": "95d17d8a.8e1d8",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "d7997924.955538",
+        "type": "ui_group",
+        "name": "Sensore luminosità",
+        "tab": "95d17d8a.8e1d8",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "dfafb391.8a17d",
+        "type": "influxdb",
+        "hostname": "192.168.2.231",
+        "port": "8086",
+        "protocol": "http",
+        "database": "electricpower",
+        "name": "",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "http://host.docker.internal:8086",
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "873f54fc.fdcb78",
+        "type": "googlehome-config-node",
+        "d": true,
+        "ipaddress": "192.168.2.119",
+        "name": "",
+        "language": "en"
     },
     {
         "id": "9a9785a72c57e268",
@@ -350,7 +575,7 @@
         "z": "9e5230c8d38af4ce",
         "name": "",
         "props": [],
-        "repeat": "5",
+        "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
@@ -369,7 +594,7 @@
         "z": "9e5230c8d38af4ce",
         "name": "",
         "props": [],
-        "repeat": "20",
+        "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
@@ -694,6 +919,218 @@
         "statusType": "auto",
         "x": 440,
         "y": 160,
+        "wires": []
+    },
+    {
+        "id": "5f3273e337f1c534",
+        "type": "coap request",
+        "z": "9e5230c8d38af4ce",
+        "method": "GET",
+        "confirmable": false,
+        "observe": false,
+        "multicast": false,
+        "multicastTimeout": 20000,
+        "url": "coap://se4iot-simplecoapserver:5683/humidity",
+        "content-format": "text/plain",
+        "raw-buffer": false,
+        "name": "humidity",
+        "x": 400,
+        "y": 420,
+        "wires": [
+            [
+                "8a71dc65fbc40816"
+            ]
+        ]
+    },
+    {
+        "id": "8a71dc65fbc40816",
+        "type": "debug",
+        "z": "9e5230c8d38af4ce",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "b23ababe9daab2d5",
+        "type": "inject",
+        "z": "9e5230c8d38af4ce",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 420,
+        "wires": [
+            [
+                "5f3273e337f1c534"
+            ]
+        ]
+    },
+    {
+        "id": "64a0c6b6.128d78",
+        "type": "inject",
+        "z": "9bfc2b6b.d09d68",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 80,
+        "wires": [
+            [
+                "524fec5b.ab0234"
+            ]
+        ]
+    },
+    {
+        "id": "524fec5b.ab0234",
+        "type": "function",
+        "z": "9bfc2b6b.d09d68",
+        "name": "",
+        "func": "msg.payload = {\"id\" : \"Powermeter\", \"Value\" : 600}\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 190,
+        "y": 240,
+        "wires": [
+            [
+                "f6790b7f.588668",
+                "72809518.e1dccc"
+            ]
+        ]
+    },
+    {
+        "id": "f6790b7f.588668",
+        "type": "debug",
+        "z": "9bfc2b6b.d09d68",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 240,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "72809518.e1dccc",
+        "type": "influxdb out",
+        "z": "9bfc2b6b.d09d68",
+        "influxdb": "dfafb391.8a17d",
+        "name": "",
+        "measurement": "power",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "univaq",
+        "bucket": "se4iot",
+        "x": 360,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "414f1c69b815f5df",
+        "type": "mqtt in",
+        "z": "9bfc2b6b.d09d68",
+        "name": "",
+        "topic": "/nodered/powerconsumption",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "a928ba0.2d1f748",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 420,
+        "y": 80,
+        "wires": [
+            [
+                "f5aa7ddf6be19fff",
+                "edf1a23a96023636"
+            ]
+        ]
+    },
+    {
+        "id": "63e617a25f05ec34",
+        "type": "influxdb out",
+        "z": "9bfc2b6b.d09d68",
+        "influxdb": "dfafb391.8a17d",
+        "name": "",
+        "measurement": "powerconsumption",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "univaq",
+        "bucket": "se4iot",
+        "x": 770,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "f5aa7ddf6be19fff",
+        "type": "json",
+        "z": "9bfc2b6b.d09d68",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 650,
+        "y": 160,
+        "wires": [
+            [
+                "63e617a25f05ec34"
+            ]
+        ]
+    },
+    {
+        "id": "edf1a23a96023636",
+        "type": "debug",
+        "z": "9bfc2b6b.d09d68",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 380,
         "wires": []
     }
 ]
