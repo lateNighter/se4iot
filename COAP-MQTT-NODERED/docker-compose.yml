@@ -83,6 +83,16 @@ services:
     ports:
       - "5683:5683"
 
+  influxdb:
+    container_name: se4iot-influxdb
+    image: influxdb:2.7.4
+    ports:
+      - 8086:8086
+    networks:
+      se4iot-network:
+        ipv4_address: 172.30.0.103
+
+
 networks:
   se4iot-network:
     driver: bridge
