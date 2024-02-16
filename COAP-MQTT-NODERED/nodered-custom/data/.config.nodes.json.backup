@@ -459,7 +459,7 @@
     },
     "node-red-dashboard": {
         "name": "node-red-dashboard",
-        "version": "3.6.1",
+        "version": "3.6.2",
         "local": false,
         "user": false,
         "nodes": {
@@ -698,7 +698,7 @@
     },
     "node-red-node-mysql": {
         "name": "node-red-node-mysql",
-        "version": "1.0.3",
+        "version": "2.0.0",
         "local": false,
         "user": false,
         "nodes": {
@@ -713,6 +713,69 @@
                 "user": false,
                 "module": "node-red-node-mysql",
                 "file": "/usr/src/node-red/node_modules/node-red-node-mysql/68-mysql.js"
+            }
+        }
+    },
+    "node-red-contrib-influxdb": {
+        "name": "node-red-contrib-influxdb",
+        "version": "0.6.1",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "influxdb": {
+                "name": "influxdb",
+                "types": [
+                    "influxdb",
+                    "influxdb out",
+                    "influxdb batch",
+                    "influxdb in"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-influxdb",
+                "file": "/data/node_modules/node-red-contrib-influxdb/influxdb.js"
+            }
+        }
+    },
+    "node-red-contrib-google-home-notify": {
+        "name": "node-red-contrib-google-home-notify",
+        "version": "0.0.7",
+        "local": true,
+        "user": false,
+        "nodes": {
+            "google-notify": {
+                "name": "google-notify",
+                "types": [
+                    "googlehome-config-node",
+                    "googlehome-notify"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-google-home-notify",
+                "file": "/data/node_modules/node-red-contrib-google-home-notify/node-red-google-home-notify.js"
+            }
+        }
+    },
+    "node-red-contrib-googlehome": {
+        "name": "node-red-contrib-googlehome",
+        "version": "0.0.15",
+        "local": true,
+        "user": false,
+        "nodes": {
+            "googlehome": {
+                "name": "googlehome",
+                "types": [
+                    "google-home-conf",
+                    "google-home",
+                    "google-home-response"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-googlehome",
+                "file": "/data/node_modules/node-red-contrib-googlehome/googlehome.js"
             }
         }
     }
