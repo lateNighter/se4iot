@@ -74,7 +74,7 @@ services:
   simplecoapserver:
     container_name: se4iot-simplecoapserver
     build:
-      context: ./coap-server-remote/
+      context: ./coap-server/
       dockerfile: Dockerfile
     image: simple-coap-server:latest
     networks:
@@ -83,6 +83,21 @@ services:
     ports:
       - "5683:5683"
 
+  simplecoapserver-remote:
+    container_name: se4iot-simplecoapserver-remote
+    build:
+      context: ./coap-server-remote/
+      dockerfile: Dockerfile
+    image: simple-coap-server-remote:latest
+    volumes:
+      - ./coap-server-remote/Californium3.properties:/app/Californium3.properties
+    networks:
+      se4iot-network:
+        ipv4_address: 172.30.0.103
+    ports:
+      - "5685:5685"
+
+
   influxdb:
     container_name: se4iot-influxdb
     image: influxdb:2.7.4
@@ -90,7 +105,7 @@ services:
       - 8086:8086
     networks:
       se4iot-network:
-        ipv4_address: 172.30.0.103
+        ipv4_address: 172.30.0.104
 
 
 networks:

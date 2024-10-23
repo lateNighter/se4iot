@@ -34,7 +34,7 @@ COPY --from=build /app/simple-coap-server/target/lib/* /app/lib/
 COPY --from=build /app/simple-coap-server/target/*.jar simple-coap-server.jar
 
 # Esponi la porta su cui il servizio è in ascolto
-EXPOSE 5683
+EXPOSE 5685
 
 # Comando per eseguire l'applicazione
-ENTRYPOINT ["java", "-cp", "simple-coap-server.jar:/app/lib/*", "server.SimpleCoapServer"]
+ENTRYPOINT ["java", "-cp", "simple-coap-server.jar:/app/lib/*", "server.SimpleCoapServer", "-D", "config.file=Californium3.properties"]

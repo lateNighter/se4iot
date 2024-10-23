@@ -31,6 +31,7 @@ public class SimpleCoapServer {
         String ipAddress = properties.getProperty("server.ip", "0.0.0.0");
         int port = Integer.parseInt(properties.getProperty("server.port", "5683"));
         
+        
         // Create a new CoAP server
         CoapServer server = new CoapServer();
         
@@ -39,6 +40,8 @@ public class SimpleCoapServer {
                 .setInetSocketAddress(socket)
                 .build();
             server.addEndpoint(endpoint);
+
+        System.out.println("CoAP server created with endpoint " + ipAddress + ":" + port);
 
         if (Boolean.parseBoolean(properties.getProperty("resource.hello-world.enabled", "true"))) {
             HelloWorldResource hello = new HelloWorldResource("hello-world-resource");
