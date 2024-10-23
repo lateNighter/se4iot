@@ -8,6 +8,7 @@ WORKDIR /app
 
 # Step 4: Clone the Git repository
 ARG GITHUB_TOKEN
+RUN echo "Cloning repository..."
 RUN git clone --sparse https://$GITHUB_TOKEN:x-oauth-basic@github.com/MDEGroup/se4iot.git .
 
 WORKDIR /app
@@ -34,7 +35,7 @@ COPY --from=build /app/simple-coap-server/target/lib/* /app/lib/
 COPY --from=build /app/simple-coap-server/target/*.jar simple-coap-server.jar
 
 # Esponi la porta su cui il servizio è in ascolto
-EXPOSE 5685
+EXPOSE 5684
 
 # Comando per eseguire l'applicazione
-ENTRYPOINT ["java", "-cp", "simple-coap-server.jar:/app/lib/*", "server.SimpleCoapServer", "-D", "config.file=Californium3.properties"]
+ENTRYPOINT ["java",  "-Dconfig.file=Californium3.properties", "-cp", "simple-coap-server.jar:/app/lib/*", "server.SimpleCoapServer"]

@@ -95,7 +95,7 @@ services:
       se4iot-network:
         ipv4_address: 172.30.0.103
     ports:
-      - "5685:5685"
+      - "5684:5684"
 
 
   influxdb:
