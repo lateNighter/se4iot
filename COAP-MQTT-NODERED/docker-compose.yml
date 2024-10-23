@@ -71,12 +71,12 @@ services:
     ports:
     - "1883:1883" 
 
-  mycoapserver:
+  simplecoapserver:
     container_name: se4iot-simplecoapserver
     build:
-      context: ./coapserver/
+      context: ./coap-server/
       dockerfile: Dockerfile
-    image: mycoapserver:latest
+    image: simple-coap-server:latest
     networks:
       se4iot-network:
         ipv4_address: 172.30.0.102

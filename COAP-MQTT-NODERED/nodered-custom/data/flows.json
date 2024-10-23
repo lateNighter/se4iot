@@ -269,10 +269,13 @@
         "broker": "95.110.171.28",
         "port": "1883",
         "clientid": "streetscience",
+        "autoConnect": true,
         "usetls": false,
         "compatmode": false,
+        "protocolVersion": 4,
         "keepalive": "60",
         "cleansession": true,
+        "autoUnsubscribe": true,
         "birthTopic": "",
         "birthQos": "0",
         "birthPayload": "",
@@ -387,6 +390,37 @@
         "rejectUnauthorized": true
     },
     {
+        "id": "3112eb76eeec366e",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "host.docker.internal",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
         "id": "9a9785a72c57e268",
         "type": "mqtt in",
         "z": "9e5230c8d38af4ce",
@@ -394,7 +428,7 @@
         "topic": "/sensors/1",
         "qos": "2",
         "datatype": "auto-detect",
-        "broker": "a928ba0.2d1f748",
+        "broker": "3112eb76eeec366e",
         "nl": false,
         "rap": true,
         "rh": 0,
@@ -968,6 +1002,71 @@
                 "5f3273e337f1c534"
             ]
         ]
+    },
+    {
+        "id": "2262f78d127bce09",
+        "type": "function",
+        "z": "9e5230c8d38af4ce",
+        "name": "Random",
+        "func": "var val = Math.random()\nmsg.payload = val; \nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 140,
+        "wires": [
+            [
+                "32a81161a7043728"
+            ]
+        ]
+    },
+    {
+        "id": "7ac08f3df4b9d12b",
+        "type": "inject",
+        "z": "9e5230c8d38af4ce",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 80,
+        "y": 140,
+        "wires": [
+            [
+                "2262f78d127bce09"
+            ]
+        ]
+    },
+    {
+        "id": "32a81161a7043728",
+        "type": "debug",
+        "z": "9e5230c8d38af4ce",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 120,
+        "wires": []
     },
     {
         "id": "64a0c6b6.128d78",
