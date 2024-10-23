@@ -16,16 +16,20 @@ import resources.TemperatureResource;
 public class SimpleCoapServer {
 
     public static void main(String[] args) {
-    	 Properties properties = new Properties();
-         try (FileInputStream input = new FileInputStream("Californium3.properties")) {
-             properties.load(input);
-         } catch (IOException e) {
-             System.out.println("Error reading properties file: " + e.getMessage());
-             return;
-         }
+        // Get the property file path from the system property
+        String propertiesFilePath = System.getProperty("config.file", "Californium3.properties");
+
+        // Load configuration from the properties file
+        Properties properties = new Properties();
+        try (FileInputStream input = new FileInputStream(propertiesFilePath)) {
+            properties.load(input);
+        } catch (IOException e) {
+            System.out.println("Error reading properties file: " + e.getMessage());
+            return;
+        }
          
-         String ipAddress = properties.getProperty("server.ip", "0.0.0.0");
-         int port = Integer.parseInt(properties.getProperty("server.port", "5683"));
+        String ipAddress = properties.getProperty("server.ip", "0.0.0.0");
+        int port = Integer.parseInt(properties.getProperty("server.port", "5683"));
         
         // Create a new CoAP server
         CoapServer server = new CoapServer();
