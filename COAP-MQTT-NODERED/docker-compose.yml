@@ -74,7 +74,7 @@ services:
   simplecoapserver:
     container_name: se4iot-simplecoapserver
     build:
-      context: ./coap-server/
+      context: ./coap-server-remote/
       dockerfile: Dockerfile
     image: simple-coap-server:latest
     networks:
