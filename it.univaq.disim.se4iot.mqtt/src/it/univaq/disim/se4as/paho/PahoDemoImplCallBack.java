@@ -54,9 +54,9 @@ public class PahoDemoImplCallBack implements MqttCallback  {
 			      
 			      client.setCallback(this);
 			      client.connect();
-			      client.subscribe("/home/outsidetemperature");
+			      //client.subscribe("/home/outsidetemperature");
 			     // client.subscribe(new String[]{"home/outsidetemperature","home/livingroomtemperature"});
-			     // client.subscribe("home/#");
+			      client.subscribe("/home/#");
 			      System.out.println("Hello!");
 			      
 			    } catch (MqttException e) {

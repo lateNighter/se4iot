@@ -18,14 +18,14 @@ public class PahoDemo {
   public PahoDemo() {}
 
   public static void main(String[] args) {
-      new PahoDemo().publish1();
-     //new PahoDemo().publish2();
-    try {
-		new PahoDemo().publish3();
-	} catch (IOException e) {
+    // new PahoDemo().publish1();
+     new PahoDemo().publish2();
+    //try {
+	//	new PahoDemo().publish3();
+	//} catch (IOException e) {
 		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
+	//	e.printStackTrace();
+	//}
   }
 
   public void publish1() {
@@ -34,7 +34,7 @@ public class PahoDemo {
       client.connect();
       MqttMessage message = new MqttMessage();
       message.setPayload("31".getBytes());
-      client.publish("/home/outsidetemperature", message);
+      client.publish("/home/livingroom/temperature", message);
       client.disconnect();
     } catch (MqttException e) {
       e.printStackTrace();
@@ -51,17 +51,17 @@ public class PahoDemo {
 	      client.connect(options);
 	      
 	      MqttMessage message = new MqttMessage();
-	      message.setPayload("29".getBytes());
+	      message.setPayload("21".getBytes());
 	      
-	      message.setRetained(false); // try with true
+	      message.setRetained(true); // try with true
 	      message.setQos(0);
 
 	      //client.publish("home/outsidetemperature", message);
 	      // Or
-	      MqttTopic topic = client.getTopic("home/outsidetemperature");
+	      MqttTopic topic = client.getTopic("/home/outsidetemperature");
 	      topic.publish(message);
 	      
-	     // client.disconnect(); //Try to comment it, execute and stop the execution
+	      client.disconnect(); //Try to comment it, execute and stop the execution
 	    } catch (MqttException e) {
 	      e.printStackTrace();
 	    }
@@ -82,10 +82,10 @@ public class PahoDemo {
 	      message.setPayload(jsondata.getBytes());
 	      
 	      
-	      message.setRetained(false); // try with true
+	      message.setRetained(true); // try with true
 	      message.setQos(0);
 
-	      client.publish("home/outsidetemperature", message);
+	      client.publish("/home/outsidetemperature", message);
 	      client.disconnect();  
 	    } catch (MqttException e) {
 	      e.printStackTrace();
